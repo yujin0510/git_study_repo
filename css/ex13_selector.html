@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*  
+            CSS 중요
+            1. 셀렉터
+            2. 박스 모델
+        */
+
+        /*  
+            동일한 선택자를 2번 이상 선언 가능
+            1. 속성 충돌X > 아무 문제 없음
+            2. 속성 충동O > 마지막 속성이 적용
+
+            ★★★ 동일한 선택자를 2번 이상 선언하지 말 것! ★★★
+            우선 순위: tag(낮) > class > ID(높)
+        */
+
+        /* div { color: blue; }
+        div { background-color: yellow; } */
+        
+        /* div { color: blue; }
+        div { color: yellow; } */
+
+        /*  
+        
+            속성 충돌 발생! > 선택자 우선 순위!
+            - 서로 다른 선택자가 동일한 태그를 선택했을 때
+              > 동일한 속성 적용 > 어떤 선택자의 속성을 적용할 지?
+            - 점수 계산 > 점수가 가장 높은 선택자를 적용
+
+            1.   태그 선택자: 개당   1점
+            2. 클래스 선택자: 개당  10점
+            3. 아이디 선택자: 개당 100점
+
+        */
+
+        /* div#box1.box { color: pink; } */
+        /* div#box1 { color: red; } */
+        /* #box1 { color: green; } */
+        /* .box { color: orange; } */
+        /* div { color: blue; } */
+        /* div { color: orange; } */
+
+        /* 클래스를 많이 만들어도 ID보다 우선순위가 낮다. */
+
+        /* .box.aaa { color: orange; } */
+        /* .box { color: red; } */
+
+        /* ------아래 div를 삭제하고 .box를 수정하면 안됨(새로 만든걸 우선 순위를 높여서 작업한다.) -------- */
+        .box { color: blue; }
+        
+        /* div.box { color: orange; } */
+        #box1 { color: orange; }
+
+        /* 부모 자식간의 우선순위 */
+        #box2 { color: red;}
+        #box2 { color: blue;}
+        #box2 { color: red;}
+
+        div > div#box2 { color: blue;}
+        /* div#box2 { color: red; } */
+        body > div > div#box2 { color: blue;}
+
+</style>
+</head>
+<body>
+    <!-- ex13_selector.html -->
+    <div id="box1" class="box aaa">상자1</div>
+
+    <div>
+        <div id="box2">상자2</div>
+    </div>
+    <p class="box">상자</p>
+
+</body>
+</html>

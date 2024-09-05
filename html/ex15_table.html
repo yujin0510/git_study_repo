@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex15_table.html -->
+	<!--  
+	
+		표
+		1. 표를 만들기 위해서 사용
+		2. 레이아웃을 만들기 위해서 > CSS 사용
+		
+		테이블 구성요소
+		1. 가장 큰 상자
+			- <table>
+			- 전체 컨테이너
+			
+		2. 중간 긴 상자
+			- <tr>
+			- table row
+			- 테이블 행 역할
+	
+		3. 가장 작은 상자
+			- <td>
+			- table data
+			- 테이블 셀
+			- 데이터를 담는 역할
+			
+		4. 가장 작은 상자
+			- <th>
+			- table header
+			- 제목을 표시하는 역할
+		
+	-->
+	
+	<h2>2행 2열 테이블</h2>
+	<table border="1" width="200" height="200" bgcolor="yellow"> <!-- 테이블 테두리 --> <!-- 코드 밑에 노란색줄 html5이후로 권장 안한다는 뜻 -->
+		<tr bgcolor="red">
+			<td bgcolor="blue">1</td>
+			<td background="images/face01.png">2</td> <!-- 1번째 줄에 행 하나 더 추가하면 오류(모든 표의 행 수는 똑같아야 한다.) -->
+		</tr>
+		<tr>
+			<td align="center" valign="top">3</td>
+			<td align="right" valign="bottom">4</td>
+		</tr>
+	</table>
+
+	<hr>
+	
+	<!-- 부모 너비 길이 = 절대적 / 자식 너비 길이 = 상대적 -->
+	<table border="1" width="200" height="200">
+		<tr> <!-- tr은 테두리 안보임 -->
+			<td width="100" height="100">홍길동</td>
+			<td width="100">홍길동홍길동홍길동홍길동홍길동홍길동홍길동홍길동홍길동홍길동</td> <!-- <인라인 태그> 부모 태그를 만나면 자동 줄바꿈 / 한국어 : 아래로 늘어남, 영어&숫자: 옆으로 늘어남-->
+		</tr>
+	<!-- 높이 길이는 너비와 다름 > 부모 사이즈 = 상대적 / 자식 높이 = 절대적 -->
+		<tr>
+			<td height="100">3</td>
+			<td>4</td>
+		</tr>
+	</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

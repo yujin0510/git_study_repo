@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex09.date.html -->
+    <script>
+
+        //날짜 시간
+        //- 내장 객체 > Date
+
+        //현재 시각
+        var now =  new Date();
+        console.log(now);
+        console.log(now.toString());
+        console.log(typeof now); //object
+
+        //요소 추출
+        //- c.get(Calendar.YEAR)
+        console.log(now.getYear());         //124
+        console.log(now.getFullYear());     //2024
+        console.log(now.getMonth());        //8(0부터 시작)
+        console.log(now.getDate());         //3(일(0) ~ 토(6))
+        console.log(now.getDay());          //2
+        console.log(now.getHours());        //15
+        console.log(now.getMinutes());      //47
+        console.log(now.getSeconds());      //59
+        console.log(now.getMilliseconds()); //326
+        console.log(now.getTime());         //1725346079326, epoch
+
+        //출력 > %tG, %tT, %tA
+        console.log(now.toString());
+        console.log(now.toDateString());
+        console.log(now.toTimeString());
+
+        //2024. 9. 3. 오후 4:07:32
+        console.log(now.toLocaleString());
+        console.log(now.toLocaleDateString());
+        console.log(now.toLocaleTimeString());
+
+        //2024-09-03T07:08:59.402Z
+        console.log(now.toISOString()); //ISO8601
+
+        //2024-09-03
+        console.log(now.toISOString().split('T')[0]);
+
+        //07:11:06
+        console.log(now.toISOString().split('T')[1].substr(0, 8));
+
+        //특정 시각 만들기
+        var christmas = new Date();
+
+        christmas.setFullYear(2024);
+        christmas.setMonth(11);
+        christmas.setDate(25);
+
+        christmas.setHours(21);
+        christmas.setMinutes(0);
+        christmas.setSeconds(0);
+
+        console.log(christmas.toLocaleString());
+
+        var birthday = new Date(1995, 10, 10);
+        var birthday = new Date(1995, 10, 10, 12, 0, 0);
+
+        //연산
+        //시각 - 시각 = 시간
+        console.log(christmas - now); //SQL(일), JavaScript(ms)
+        console.log((christmas - now) / 1000 / 60 / 60 / 24);
+
+        //시각 + 시간 = 시각
+        //시각 - 시간 = 시각
+        var ani = new Date();
+        // console.log(ani + 100); //Tue Sep 03 2024 16:19:57 GMT+0900 (GMT+09:00)100
+
+        ani.setTime(ani.getTime() + (100 * 24 * 60 * 60 * 1000));
+        console.log(ani.toLocaleString()); //2024. 12. 12. 오후 4:22:33
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex20_collection.html -->
+
+    <h1>이미지</h1>
+    <!-- img[src=images/catty$$.png]*5 -->
+    <img src="images/catty01.png" alt="">
+    <img src="images/catty02.png" alt="">
+    <img src="images/catty03.png" alt="">
+    <img src="images/catty04.png" alt="">
+    <img src="images/catty05.png" alt="">
+
+    <h1>링크</h1>
+    <a href="https://naver.com"></a>        
+    <a href="https://google.com"></a>
+    <a href="https://daum.net"></a>
+
+    <h1>앵커</h1>
+    <a name="a1">앵커1</a>
+    <a name="a2">앵커2</a>
+
+    <h1>폼</h1>
+    <form>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <a href="">링크</a>
+        <img src="images/catty01.png">
+    </form>
+    <form>
+        <input type="text">
+        <input type="checkbox">
+        <input type="radio">
+        <input type="button">
+    </form>
+
+    <script>
+
+        /*
+        
+            내장 배열(=컬렉션)
+            - 문서 내용(작성된 HTML)을 기반으로 자동 생성되는 배열
+            - 내장 배열을 통해서 태그를 접근할 수 있다.
+
+            1. window.document.images
+            2. window.document.links
+            3. window.document.anchors
+            4. window.document.forms
+            5. window.document.forms.elements
+            6. window.document.all > 비표준 타입 > MS > 비권장
+        
+        */
+
+        console.log(window.document.images); //HTMLCollection(6) [img, img, img, img, img, img]
+        console.log(window.document.images.length); //6
+        console.log(window.document.images[0].src); //http://127.0.0.1:5500/javascript/images/catty01.png
+        console.clear();
+        
+        console.log(window.document.links); //HTMLCollection(4) [a, a, a, a]
+        console.clear();
+        
+        console.log(window.document.anchors); //HTMLCollection(2) [a, a, a1: a, a2: a]
+        console.clear();
+        
+        console.log(window.document.forms); //HTMLCollection(2)
+        console.clear();
+        
+        //폼태그가 가지는 자식들만(image는 형제관계)
+        console.log(window.document.forms[0].elements); //HTMLFormControlsCollection(3) [input, input, input]
+        console.log(window.document.forms[1].elements); //HTMLFormControlsCollection(4) [input, input, input, input]
+        console.clear();
+        
+        console.log(window.document.all); //HTMLAllCollection(32) [html, head, meta, meta, title, body, h1, img, img, img, img, img, h1, a, a, a, h1, a, a, h1, form, input, input, input, a, img, form, input, input, input, input, script, viewport: meta, a1: a, a2: a]
+       
+    </script>
+</body>
+</html>

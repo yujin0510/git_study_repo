@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+            박스 모델
+            1. border, 테두리
+            
+            2. width, height, 너비, 높이
+            - 모든 태그는 영역을 가진다.
+        */
+
+        .box { border: 1px solid black; }
+
+        /* 높이에 %하면 안바뀜 */
+        /* width=100% > 2px정도 차이남 */
+        /* auto는 크기 조절할때 사용(auto로 안할때 200px X 200px 일때 사각형은 고정이고 글자만 빠져나옴) */
+        /* min-height: 처음엔 지정한 사이즈를 최소 사이즈로 보고 글자가 많아지면 자동으로 높이 조절 > max는 반대 */
+        /* 1) 2) */
+        #box2 {
+            background-color: gold;
+            /* width: 200px;
+            height: 200px; */
+            /* width: 50%;
+            height: 200px; */
+            /* width: auto;
+            height: auto; */
+            width: 200px;
+            min-height: 200px;
+        }
+        
+        /* 3) !important하면 제일 우선 순위 >> 절대 사용 금지! */
+        #txt1 {
+            height: 50px !important;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex15_box.html -->
+    <h1>CSS 박스 모델</h1>
+    
+    <!-- 1) -->
+    <!-- <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div> -->
+    
+    <!-- 2) -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <!-- 3) 인라인 스타일이라서(안에서 직접 지정) 거의 우선 순위 높!! -->
+    <input type="text" id="txt1"
+        style="width: 500px; height: 300px; font-size: 5em">
+</body>
+</html>
