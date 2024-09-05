@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="assets/7121714adf.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/question.css">
+  <title>Document</title>
+ </head>
+ <body>
+  <header class="question">
+   <h1>JavaScript <small>아래의 요구사항을 구현하시오.</small></h1>
+   <div>
+    Skill: JavaScript
+   </div>
+  </header>
+  <div id="main">
+   <div class="requirement">
+    <h1>요구사항</h1>
+    <p>아래와 같은 문서를 생성하시오.</p>
+   </div>
+   <div class="io">
+    <em>조건..</em>
+    <ul>
+     <li>주문하시는 분 정보를 받으시는 분으로 복사하시오.</li>
+    </ul>
+   </div><!-- 
+      <div class="io">
+         <em>입력..</em>
+         <blockquote>
+            <p> <i class="fa-solid fa-keyboard"></i></p>
+         </blockquote>
+      </div>
+
+      <div class="io">
+         <em>호출..</em>
+         <pre><code>digit(1);</code></pre>
+      </div>
+
+      <div class="io">
+         <em>출력..</em>
+         <pre><code></code></pre>
+      </div>
+      
+
+      <div class="think">
+         <em>
+            <i class="fa-solid fa-splotch"></i>
+            더 생각해볼 것
+         </em>
+         <ul>
+            <li>?</li>
+         </ul>
+      </div>
+       -->
+   <h3 id="pagetitle">구현 페이지 <span onclick="runpage();"><i class="fa-brands fa-chrome"></i> 실행하기</span></h3><img src="assets/form3.png"> <!-- <div class="io">
+         <em>다운로드..</em>
+         <ul>
+            <li><a href="https://drive.google.com/file/d/1Ilcbux2aX8exBh8NrEoyJN_Bvk0m3Jrf/view?usp=sharing" style="text-decoration: none; color: #444;"><i class="fa-solid fa-download"></i> 이미지</a></li>
+         </ul>
+      </div>  -->
+   <style>
+         #pagetitle {
+            margin-top: 50px !important;
+            border-left: 10px solid rgba(60, 168, 78, 0.6);
+            padding-left: 10px;
+            margin-top: 25px;
+            margin-bottom: 20px;
+         }
+         #pagetitle > span {
+            margin-left: 15px;
+            font-size: .9rem;
+            cursor: pointer;
+         }
+      </style>
+   <script>
+         function runpage() {
+            let width = 430;
+            let height = 400;
+            let path = window.location.pathname;
+            let page = path.split("/").pop();
+            page = page.replace('.html', '') + '_impl.html';
+            window.open(page, 'runpage', 'location=0, width=' + width + ', height=' + height);
+         }
+
+
+      </script>
+  </div>
+ </body>
+</html>
