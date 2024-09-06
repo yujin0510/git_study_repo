@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #table1 td {
+            border: 1px solid gray;
+            width: 126px;
+            height: 126px;
+            /* 1) 해결법 */
+            /* font-size: 0; */
+        }
+        
+        #table1 td img {
+            /* 1) 해결법 > 권장 */
+            display: block;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <!-- ex33_content.html -->
+    <table id="table1">
+        <tr>
+            <!-- 1) 이미지 넣으면 테이블 126*126에 맞지 않음(이미지가 126*126인데) -->
+            <!-- <td><img src="images/rect_icon01.png"></td>  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        //오른쪽 버튼 > Context Menu
+        // 함수를 만들어줘야함 > 나중에 작업안해도 되는 수업 함 > 그래서 위에 body 에서 만들어줌
+        window.oncontextmenu = m2;
+        function m2() {
+            return false;
+        }
+
+        //<td> x 25개 이벤트 추가
+        // document.getElementsByTagName('td');
+        var list = document.querySelectorAll('#table1 td');
+
+        // alert(list.length);
+
+        for (var i=0; i<list.length; i++) {
+
+            list[i].onmousedown = m1;
+            
+        }
+
+        function m1() {
+            // alert();
+            // 어떤 <td>를 클릭?
+            // event.srcElement
+            // event.target.bgColor = 'gold';
+            // event. target.innerText = 'click';
+
+            if (event.buttons == 1) {
+                event.target.innerHTML = '<img src = "images/rect_icon01.png">';
+            } else if (event.buttons == 2) {
+                event.target.innerHTML = '<img src = "images/rect_icon02.png">';
+            }
+        }
+    </script>
+</body>
+</html>
