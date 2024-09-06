@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex34_event.html -->
+    <h1>DOM Event</h1>
+
+    <button type="button" id="btn1">버튼(BOM)</button>
+    <button type="button" id="btn2">버튼(BOM)</button>
+
+    <hr>
+
+    <!-- ------------------------------------------------------ -->
+    <select id="sel1">
+        <option value="mouseover">mouseover</option>
+        <option value="click" selected>click</option>
+        <option value="dblclick">double click</option>
+    </select>
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+
+        //BOM
+        // btn1.onclick = m1; //2)
+        // btn1.onclick = m2; //btn1.onclick =m1이랑 m2하면 >> m2만뜸 >> 덮어쓰기
+        // btn1.onclick = m3; //event에서는 하나의 함수만 받을 수 있다.
+
+        function m1() {
+            alert('m1');
+        }
+        function m2() {
+            alert('m2');
+        }
+        function m3() {
+            m1();
+            m2();
+        }
+        
+        // btn2.onclick = m4;
+        function m4() {
+            //2)이벤트 제거(BOM) > 첫번째 버튼누르고 나서 두번째 버튼 누르고 다시 누르면 메시지 안뜸
+            btn1.onclick = null;
+        }
+
+
+        //---------------------------------------------------------------------------------------------------
+        //DOM Event
+        //- btn2.addEventListener(이벤트 종류, 함수);
+        //- 콜백 함수 관리 > Invocation List
+        btn2.addEventListener('click', m5); //onclick > on빼고 click만 , onmouseover > on빼고 mouseover..
+
+        function m5() {
+            alert('DOM');
+        }
+        
+        btn2.addEventListener('click', m6); //덮어쓰기X > m5, m6을 하나의 이벤트에 넣을 수 있다.
+
+        function m6() {
+            alert('DOM+');
+        }
+
+        //이벤트 제거
+        btn2.removeEventListener('click', m5); //출력: DOM+
+
+
+        //----------------------------------------------------------------------------------------------------
+        var type ='click';
+
+        document.getElementById('sel1').onchange = m7;
+        function m7() {
+            // type = document.getElementById('sel1').value;
+            
+            btn2.removeEventListener(type, m6);
+            type = event.target.value; //코드 유연 > 권장
+            btn2.addEventListener(type, m6);
+        }
+
+    </script>
+
+</body>
+</html>
