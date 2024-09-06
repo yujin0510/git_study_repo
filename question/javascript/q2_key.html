@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            color: #777777;
+            font-family: 'GmarketSansMedium';
+        }
+        
+        div > #txtMessage {
+            border: none;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>회원 가입</h1>
+    <form name="form1">
+        <div>아이디 :</div>
+        <div><input type="text" name="txt1"></div>
+        <div><input type="text" name="txt2" id="txtMessage"></div>
+    </form>
+
+    <script>
+
+        var txt1 = window.document.form1.txt1;
+        var txt2 = window.document.form1.txt2;
+
+        txt1.onkeyup = m1;
+
+        function m1() {
+            if (txt1.length < 4 ) {
+                txt2.value = '아이디가 너무 짧습니다.';            
+            }
+        }
+
+    </script>
+</body>
+</html>
