@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+                @font-face {
+                    font-family: 'GmarketSansMedium';
+                    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+                    font-weight: normal;
+                    font-style: normal;
+                }      
+
+                body {
+                    color: #777777;
+                    font-family: 'GmarketSansMedium';   
+                }
+            
+        </style>
+</head>
+<body>
+    <form name="form1">
+            <h1>고양이</h1>
+            <img src="../images/catty01.png" name="cat1">
+            <img src="../images/catty02.png" name="cat2">
+            <img src="../images/catty03.png" name="cat3">
+            <img src="../images/catty04.png" name="cat4">
+            <img src="../images/catty05.png" name="cat5">
+    </form>
+
+    <script>
+
+        var cat1 = window.document.images['cat1'];
+        var cat2 = window.document.images['cat2'];
+        var cat3 = window.document.images['cat3'];
+        var cat4 = window.document.images['cat4'];
+        var cat5 = window.document.images['cat5'];
+
+        cat1.onmouseover = m1;
+        cat2.onmouseover = m2;
+        cat3.onmouseover = m3;
+        cat4.onmouseover = m4;
+        cat5.onmouseover = m5;
+
+
+        function m1() {
+            cat1.width +=  5;
+        }
+
+        function m1() {
+            cat2.width +=  5;
+        }
+
+        
+    </script>
+</body>
+</html>
