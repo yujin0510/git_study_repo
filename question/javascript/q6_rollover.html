@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+        }
+        
+        #list {
+            display: inline-block;
+            border: 1px solid #DEDEDE;
+            padding: 5px;
+        }
+        
+        #txt {
+            font-family: 'GmarketSansMedium';
+            font-size: 30px;
+            width: 600px;
+            border: none;
+            outline: none;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="list">
+        <img src="../images/img01.jpg" name="ski">
+        <img src="../images/img02.jpg" name="sunFlower">
+        <img src="../images/img03.jpg" name="tree">
+    </div>
+    <br>
+    <input type="text" id="txt" name="txtChange">
+    
+    <script>
+        var ski = window.document.images['ski'];
+        var sunFlower = window.document.images['sunFlower'];
+        var tree = window.document.images['tree'];
+        var txtChange = window.document.all.txtChange;
+
+        window.document.all = change;
+        
+        ski.onmouseover = m1;
+
+        function change() {
+
+            
+            ski.src = '../images/img04.jpg';
+            txtChange.value = "'스키'타는 사람이 '당근'으로 변했습니다.";
+
+        }
+    </script>
+
+</body>
+</html>
