@@ -27,8 +27,66 @@
         var cat4 = window.document.images['cat4'];
         var cat5 = window.document.images['cat5'];
 
-        cat1.onmouseover = m1;
+
+        //  1번 -----------------------------------------------
+        cat1.onmouseover = catChange1;
+        cat1.onmouseout = Change1;
         
+        function catChange1() {
+                cat1.src = '../images/dog01.jpg';
+            }
+            
+        function Change1() {
+                cat1.src = '../images/cat01.jpg';
+        }
+
+        //  2번 -----------------------------------------------
+        cat2.onmouseover = catChange2;
+        cat2.onmouseout = Change2;
+        
+        function catChange2() {
+            cat2.src = '../images/dog02.jpg';
+        }
+        
+        function Change2() {
+            cat2.src = '../images/cat02.jpg';
+        }
+        
+        //  3번 -----------------------------------------------
+        cat3.onmouseover = catChange3;
+        cat3.onmouseout = Change3;
+        
+        function catChange3() {
+            cat3.src = '../images/dog03.jpg';
+        }
+        
+        function Change3() {
+            cat3.src = '../images/cat03.jpg';
+        }
+        
+        //  4번 -----------------------------------------------
+        cat4.onmouseover = catChange4;
+        cat4.onmouseout = Change4;
+        
+        function catChange4() {
+            cat4.src = '../images/dog04.jpg';
+        }
+        
+        function Change4() {
+            cat4.src = '../images/cat04.jpg';
+        }
+        
+        //  5번 -----------------------------------------------
+        cat5.onmouseover = catChange5;
+        cat5.onmouseout = Change5;
+        
+        function catChange5() {
+                cat5.src = '../images/dog05.jpg';
+            }
+            
+        function Change5() {
+                cat5.src = '../images/cat05.jpg';
+        }
 
     </script>
     
