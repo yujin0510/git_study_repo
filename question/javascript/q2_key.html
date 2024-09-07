@@ -17,9 +17,12 @@
             font-family: 'GmarketSansMedium';
         }
         
-        div > #txtMessage {
+        #txtMessage {
             border: none;
             outline: none;
+            font-family: 'GmarketSansMedium';
+            color:  red;
+            
         }
 
     </style>
@@ -40,8 +43,12 @@
         txt1.onkeyup = m1;
 
         function m1() {
-            if (txt1.length < 4 ) {
+            if (txt1.value.length < 4) {
                 txt2.value = '아이디가 너무 짧습니다.';            
+            } else if(txt1.value.length > 13) {
+                txt2.value = '아이디가 너무 깁니다.';            
+            } else {
+                txt2.value = '아이디가  적합합니다.';            
             }
         }
 
