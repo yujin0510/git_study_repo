@@ -15,15 +15,20 @@
 
     <script>
 
-        window.document.images['cat1'].onmouseover = m1;
-        window.document.images['cat2'].onmouseover = m2;
-        window.document.images['cat3'].onmouseover = m3;
-        window.document.images['cat4'].onmouseover = m4;
-        window.document.images['cat5'].onmouseover = m5;
+        // window.document.images['cat1'] = m1;
+        // window.document.images['cat2'] = m2;
+        // window.document.images['cat3'] = m3;
+        // window.document.images['cat4'] = m4;
+        // window.document.images['cat5'] = m5;
+        
+        var cat1 = window.document.images['cat1'];
+        var cat2 = window.document.images['cat2'];
+        var cat3 = window.document.images['cat3'];
+        var cat4 = window.document.images['cat4'];
+        var cat5 = window.document.images['cat5'];
 
-        function m1() {
-            window.document.images['cat1'].src = '../images/dog01.jpg'; 
-        }
+        cat1.onmouseover = m1;
+        
 
     </script>
     
