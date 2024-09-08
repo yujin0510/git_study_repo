@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'GmarketSansMedium';
+        }
+
+        #num {
+            font-size: 10em;
+            font-weight: bold;
+            text-align: center;
+            width: 250px;
+            display: block;
+            margin: 100px auto;
+            border: 0;
+            outline: none;
+        }
+        
+    </style>
+</head>
+<body >
+    <div><input type="text" id="num" name="num" value="10" readonly></div>
+    <div>
+        <div>
+            &lt;input type = 'text'&gt;
+            <br>
+            테두리를 감췄습니다.
+        </div>
+    </div>
+
+    <script>
+
+var n = 10;
+
+var timer = setInterval(startNum, 1000);
+
+function startNum() {
+    n--;
+    document.all.num.value = n;
+
+    if (n == 0) {
+        clearInterval(timer);
+        location.href = "http://google.com";
+    }
+}
+
+window.onkeydown = escEnd;
+
+function escEnd() {
+    if (event.keyCode == 27) {
+        clearInterval(timer);
+        document.body.bgColor = "tomato";
+    }
+};
+        
+        
+    </script>
+</body>
+</html>
