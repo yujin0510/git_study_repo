@@ -47,17 +47,49 @@
         var tree = window.document.images['tree'];
         var txtChange = window.document.all.txtChange;
 
-        window.document.all = change;
+        // window.document.all = change;
         
         ski.onmouseover = m1;
+        ski.onmouseout = m2;
+        
+        sunFlower.onmouseover = m3;
+        sunFlower.onmouseout = m4;
+        
+        tree.onmouseover = m5;
+        tree.onmouseout = m6;
 
-        function change() {
-
-            
+        function m1() {
             ski.src = '../images/img04.jpg';
             txtChange.value = "'스키'타는 사람이 '당근'으로 변했습니다.";
-
         }
+        
+        function m2() {
+            ski.src = '../images/img01.jpg';
+            txtChange.value = "";
+        }
+
+        
+        function m3() {
+            sunFlower.src = '../images/img05.jpg';
+            txtChange.value = "'해바라기'가 '피망'으로 변했습니다.";
+        }
+        
+        function m4() {
+            sunFlower.src = '../images/img02.jpg';
+            txtChange.value = "";
+        }
+
+
+        function m5() {
+            tree.src = '../images/img06.jpg';
+            txtChange.value = "'나무'가 '개'가 됐습니다.";
+        }
+        
+        function m6() {
+            tree.src = '../images/img03.jpg';
+            txtChange.value = "";
+        }
+
     </script>
 
 </body>
