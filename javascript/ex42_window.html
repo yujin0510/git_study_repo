@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex42_window.html -->
+
+    <!-- 3.------------------------------------- -->
+     <input type="text" class="txt">
+     <input type="text" class="txt">
+     <input type="text" class="txt">
+
+    <script>
+
+        /*
+        
+            window 객체
+                - window.open()
+                - window.close()
+
+        */
+
+        //★★★ 1. 자바스크립트에서 전역 변수 or 전역 함수는 항상 window객체의 프로퍼티로 자동 등록된다.
+        var a = 10; //전역변수 > window객체의 프로퍼티 > a = window.a
+        window.b = 20; //window 객체의 프로퍼티
+
+        var a = 30; //변수(X), 프로퍼티라 가능 (자바로 보면 HashMap > 덮어쓰기)
+        
+        console.log(window.b); //20
+        console.log(window.a); //10
+
+        // alert(window);
+        // console.log(window);
+
+        //전역 함수
+        function test() {
+            //지역 함수
+            function aaa() {
+
+            }
+            aaa();
+        }
+        test();
+        window.test(); //원래는 이렇게 호출
+        
+        // window.test = function() {
+
+        // }
+        
+
+        //향상된 for문(X) > 객체의 프로퍼티 탐색 
+        for (let p in window) {
+            console.log(p); //a, b, test 멤버로 들어가있음 > aaa는 X
+        }
+
+
+        //단, let과 const는 전역 > window 프로퍼티로 등록되지 않는다.
+        let age = 20;
+        console.log(window.age);
+
+        
+
+        //------------------------------------------------------------
+        //alert = window.alert
+        // alert('test');
+        // window.alert('test');
+        // window.confirm('test');
+
+        // window.setTimeout();
+        // window.setInterval();
+
+        console.clear();
+
+
+
+
+        //2. 자바스크립트 배열이 없음 -----------------------------------------------
+        //- 배열 > index
+        // list > 객체
+        const list = [ 100, 200, 300, 400, 500 ]; //array 객체
+
+        console.log(list.length);
+        console.log(list[0]);
+
+        for (let p in list) {
+            console.log(p); //방번호 출력(0, 1, 2, 3, 4) > 배열 방번호 > 첨자(X), 프로퍼티(O)
+        }
+
+        // console.log(list[0]);
+        // console.log(list.0);
+        console.log(list[10]); //undefined > list[10]를 프로퍼티로 보고 있다.
+        
+
+        
+        
+        // 3.-----------------------------------------------------------------------
+        const txt = document.getElementsByClassName('txt');
+
+        console.log(txt.length);
+        console.log('=======================')
+        // list = 배열 , txt = 유사 배열(자바에서 collection)
+        console.log(list);
+        console.log(txt);
+
+        
+    </script>
+</body>
+</html>

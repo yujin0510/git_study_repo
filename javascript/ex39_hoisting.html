@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex39_hoisting.html -->
+    <!-- 면접에서 종종 나오는 질문 -->
+
+    <script>
+
+        //호이스팅, Hoisting
+        //- 함수 호이스팅(★★★)
+        //- 변수 호이스팅
+
+
+        //선언 > 사용
+
+        let a = 10;
+        console.log(a);
+
+
+        f1();
+
+
+        function f1() {
+            alert('f1');
+        }
+
+        var b = 20;
+        console.log(b);
+
+        // 1.------------------------------------------------------
+        // var c; //2.
+        // console.log(c); //1. undefined > 변수를 초기화하지 않은 상태
+        // var c = 30; //1.
+        // c = 30; //2.
+
+        // let > 호이스팅 안됨 > 오류
+        // 변수 선언 후 함수 선언
+        console.log(d);
+        let d = 40;
+
+    </script>
+</body>
+</html>
