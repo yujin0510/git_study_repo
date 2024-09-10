@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ondragstart="return false;" onselect="return false;" onselectstart="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            /* position: absolute; */
+            position: relative; /*3) 상자와 마우스간의 간격에 오차가 생김*/
+            left: 0;
+            top: 0; 
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drag & Drop</h1>
+    <div id="box1" class="box"></div>
+    <p>드래그 앤 드랍을 구현합니다.</p>
+
+    <script>
+
+        // HTML : ondragstart="return false;" onselect="return false;" onselectstart="return false" > 드래그X
+
+        const box1 = document.getElementById('box1');
+        let isDown = false;
+        //마우스 클릭 위치 알아내기
+        let x = 0;
+        let y = 0;
+        //3)
+        let bx = box1.getBoundingClientRect().x; //콘솔창에서 bx입력 > 8
+        let by = box1.getBoundingClientRect().y;
+
+        //객체 이동하는 인터페이스
+        //window > box1로 변경하면 박스가 따라오지 않고 window는 화면 전체
+        window.onmousedown = function() {
+            if (event.target.id == 'box1') { //상자에만 반응 > 다른곳을 클릭해도 상자가 안따라오게
+                isDown = true;
+
+                //사각형의 어느 부분을 눌렀는지?
+                x = event.offsetX;
+                y = event.offsetY;
+            }
+        };
+        
+        window.onmousemove = function() {
+            if (isDown) { //마우스 누른채 > isDown
+                box1.style.left = event.clientX - x  - bx + 'px';
+                box1.style.top = event.clientY - y - by + 'px';
+            }
+        };
+        
+        window.onmouseup = function() {
+            isDown = false;
+        };
+    </script>
+</body>
+</html>

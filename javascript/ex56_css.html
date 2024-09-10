@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 코드 다시 확인 */
+
+        #box {
+            margin: 100px;
+            width: 560px;
+            height: 560px;
+        }
+
+        /* #box img {
+            transition: all 1s linear;
+        }
+
+        #box:hover img {
+            transform: rotate(360deg);
+        } */
+         
+    </style>
+</head>
+<body>
+    <!-- ex56_css.html -->
+
+    <div id="box">
+        <img src="images/roulette.png">
+    </div>
+
+    <script>
+
+        const img = document.querySelector('#box img');
+        let degree = 0; //rotate값을 누적시켜야함
+        let timer = 0; 
+
+        img.onclick = function() {
+
+            if (timer == 0) {
+                
+                // setInterval(function() {}, 1000);
+                setInterval(() => {
+                    // img.style.transform = 'rotate(30deg)';
+                    img.style.transform = `rotate(${degree}deg)`;
+                    degree += 10;
+                }, 10);
+            
+            } else {
+                clearInterval(timer);
+                timer = 0;
+            }
+
+            
+        };
+        
+    </script>
+
+</body>
+</html>
