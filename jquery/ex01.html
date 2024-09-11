@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>jQuery</h1>
+
+    <input type="text" name="txt1" id="txt1">
+
+    <!-- 로컬 설치 -->
+    <script src="js/jquery-3.7.1.js"></script>
+
+    <!-- CDN -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script> -->
+
+    <script>
+
+        /*
+        
+            jquery > MPA(PC웹)
+            - https://jquery.com
+            - 자바스크립트 function > 언어X
+            - 쉽고 편하게 하기 위해
+        
+            - alpine js(공부해보면 좋은)
+            
+        */
+
+        // console.log(jQuery); //함수
+
+        //1. BOM > BOM 트리
+        window.document.all.txt1.value = 'BOM';
+
+        //2. DOM > getXXX() or DOM Tree(Axis) or querySelector()
+        document.getElementById('txt1').value = 'DOM';
+
+        //3. jQuery > 어떤 코드든 jQuery사용할 때 jQuery()로 시작
+        jQuery('#txt1').val('jquery');
+
+
+        
+    </script>
+    
+</body>
+</html>
